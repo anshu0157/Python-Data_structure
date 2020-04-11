@@ -1,0 +1,26 @@
+class stack:
+    def __init__(self):
+        self.item=[]
+    def push(self,element):
+        self.item.append(element)
+    def pop(self):
+        return self.item.pop()
+    def is_empty(self):
+        if self.item==None:
+            return True
+        else:
+            return False
+    def get_stack(self):
+        return self.item
+    def last_ele(self):
+        return self.item[-1]
+    def first_ele(self):
+        return self.item[0]
+A=stack()
+A.is_empty()
+A.push(3)
+A.push('g')
+A.push('p')
+A.get_stack()
+A.last_ele()
+A.first_ele()
