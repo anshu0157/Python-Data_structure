@@ -189,7 +189,7 @@ class Linkedlist:
     #print the nth node from last
     def nth_last_node(self,n):
         cur=self.head
-        total_l=self.length_iter() #another class method that count the length of the linkedlist
+        total_l=self.length() #another class method that count the length of the linkedlist
         while cur:
             if total_l ==n:
                 return cur.data
@@ -263,6 +263,7 @@ class Linkedlist:
             p.next=self.head
             self.head=p
             prev.next=None
+    
     def print_l(self):
         if not self.head:
             return f'Linkedlist is empty'
