@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 27 01:30:58 2020
-
-@author: anshu
-"""
-
-
 from Circular_linkedlist import Circular_llist as cl
 from Singly_linkedlist import Linkedlist as sl
 
