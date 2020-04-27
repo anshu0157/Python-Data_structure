@@ -7,45 +7,57 @@ Created on Mon Apr 27 00:04:44 2020
 
 
 #josephus problem
-from Circular_linkedlist import Circular_llist as cl
+from Circular_linkedlist import Circular_llist as self
 
-class josephus(cl):
-    cl. __init__(cl)
-    def remove(self,node):
-        cur=self.head
-        if cur==node:
-            self.head=cur.next
-           # print(f'The removed element is {cur.data} at position 0')
-            cur=None
-            return
-        count=0
-        prev=None
-        while cur.next and cur != node:
-            prev=cur
-            cur=cur.next
-            count+=1
-        prev.next=cur.next
-        #print(f'The removed element is {cur.data} at position {count}')
-        cur=None
-    
+class josephus(self):
+    self. __init__(self)
+    def jremove(self,node):
+        if self.head==node:
+            cur=self.head
+            while cur.next != self.head:
+                cur=cur.next
+            if self.head == self.head.next:
+                self.head=None
+                return
+            else:
+                cur.next=self.head.next
+                self.head=self.head.next
+        else:
+            cur=self.head
+            prev=None
+            while cur.next != self.head:
+                prev=cur
+                cur=cur.next
+                if cur == node:
+                    prev.next=cur.next
+                    cur=cur.next
+                
+                
+        
+            
+            
+        
     def josephus_prob(self,step):
         cur=self.head
-        while self.__length__() >1:
+        while self.__length__() > 1:
             count=1
             while count != step:
                 cur=cur.next
                 count+=1
             print('Kill' + str(cur.data))
-            self.remove(cur)
+            self.jremove(cur)
             cur=cur.next
-
+    
 
 j=josephus()
 for i in range(int(input('enter the no. of nodes you want to create:'))):
     j.append(int(input('enter the elements')))
 
-j.josephus_prob(step=3)
+j.josephus_prob(step=2)
 j.printl()
+#j.jremove(3)
+#j.printl()
                 
+
         
         

@@ -41,21 +41,28 @@ class Circular_llist:
         self.head=new_node
     
     def remove(self,key):
-        cur=self.head
-        if cur.data==key:
-            self.head=cur.next
-            print(f'The removed element is {cur.data} at position 0')
-            cur=None
-            return
-        count=0
-        prev=None
-        while cur.next and cur.data !=key:
-            prev=cur
-            cur=cur.next
-            count+=1
-        prev.next=cur.next
-        print(f'The removed element is {cur.data} at position {count}')
-        cur=None
+        if self.head.data==key:
+            cur=self.head
+            while cur.next !=self.head:
+                cur=cur.next
+            if self.head==self.head.next:
+                self.head=None
+                return
+            else:
+                cur.next=self.head.next
+                self.head=self.head.next
+        else:
+            cur=self.head
+            prev=None
+            while cur.next != self.head:
+                prev=cur
+                cur=cur.next
+                if cur.data == key:
+                    prev.next=cur.next
+                    cur=None
+                    return
+            if cur.data != key:
+                print('elements not found for deletion')
         
     def __length__(self):
         cur=self.head
@@ -65,7 +72,7 @@ class Circular_llist:
             cur=cur.next
             if cur == self.head:
                 break
-        print(f'Length of linkedlist is {count}')
+        #print(f'Length of linkedlist is {count}')
         return count
     
     def split_in2(self):
@@ -104,7 +111,7 @@ class Circular_llist:
                 break
         print()
 
-'''        
+      
 c=Circular_llist()
 c.preappend(22)
 c.append(23)
@@ -114,8 +121,7 @@ c.preappend(87)
 c.preappend(899)
 c.append(78)
 c.printl()
-#c.remove(34)
+c.remove(89)
 c.printl()
-c.__length__()
-c.split_in2()
-'''
+#c.__length__()
+#c.split_in2()
