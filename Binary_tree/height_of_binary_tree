@@ -1,0 +1,20 @@
+
+from Binary_tree_traversal import binary_tree as bt,Node
+class height_of_bt(bt):
+    bt.__init__(bt,Node)
+    def height(self,node):
+        if node is None:
+            return -1
+        left_height=self.height(node.left)
+        right_height=self.height(node.right)
+        return 1 + max(left_height,right_height)
+    
+h=height_of_bt(1)
+#h.root=Node(1)
+h.root.left=Node(2)
+h.root.right=Node(3)
+h.root.left.left=Node(4)
+h.root.left.right=Node(5)
+
+print(h.traverse_tree('preorder'))
+print(h.height(h.root))
