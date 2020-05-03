@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 30 22:05:37 2020
-
-@author: anshu
-"""
 class Queue:
     def __init__(self):
         self.items=[]
