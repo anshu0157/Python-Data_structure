@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Apr 26 17:25:19 2020
-
-@author: anshu
-"""
-
 #creating class Node
 class Node:
     def __init__(self,data):
